@@ -16,15 +16,25 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
-</head>
 
+<link href='http://fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+<script src="wp-content/themes/flannel/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
 <body <?php body_class(); ?>>
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
 <div id="page" class="hfeed site container">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<div class="site-branding group">
+			<div class="grid_4">
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+			</div>
+			<div class="grid_4">
+				<img src="wp-content/themes/flannel/images/fl-logo.png" alt="">
+			</div>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -34,5 +44,4 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
-
 	<div id="content" class="site-content">

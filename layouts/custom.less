@@ -3,6 +3,8 @@
 *,
 :before,
 :after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
 
@@ -18,6 +20,11 @@
 
 /* Color Combo Mix-ins */
 
+.primary-head {
+  background: @primary;
+  color: @light;  
+}
+
 .secondary-head {
   background: @secondary;
   color: @light;
@@ -28,10 +35,98 @@
   color: @dark;
 }
 
-body {
-  .secondary-head;
+/* reusable classes */
+
+.fancy-font {
+  font-family: 'Pompiere', cursive;
 }
 
-a {
-  .secondary-body;
+/* clearfix from http://css-tricks.com/pseudo-element-roundup/ */
+
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+.fl {
+  float: left;
+}
+
+/* Dynamic-ish Grid */
+
+@columns:12;
+@gutter:5;
+@gutterPct:(@gutter / 100);
+@colWidth:((100/@columns) / 100);
+@singleCol: (@colWidth - @gutter);
+//@fullWidth:(@singleCol + @gutter) * @columns);
+
+.grid_1  { .fl; margin: 0; width:  percentage(@colWidth) * 1; }
+.grid_2  { .fl; margin: 0; width: (percentage(@colWidth) * 2); }
+.grid_3  { .fl; margin: 0; width: (percentage(@colWidth) * 3); }
+.grid_4  { .fl; margin: 0; width: (percentage(@colWidth) * 4); }
+.grid_5  { .fl; margin: 0; width: (percentage(@colWidth) * 5); }
+.grid_6  { .fl; margin: 0; width: (percentage(@colWidth) * 6); }
+.grid_7  { .fl; margin: 0; width: (percentage(@colWidth) * 7); }
+.grid_8  { .fl; margin: 0; width: (percentage(@colWidth) * 8); }
+.grid_9  { .fl; margin: 0; width: (percentage(@colWidth) * 9); }
+.grid_10 { .fl; margin: 0; width: (percentage(@colWidth) * 10); }
+.grid_11 { .fl; margin: 0; width: (percentage(@colWidth) * 11); }
+.grid_12 { .fl; margin: 0; width: (percentage(@colWidth) * 12); }
+.gutter_grid_1  { .fl; margin: 0 percentage(@gutterPct / 2); width:  (percentage(@colWidth) - @gutter); }
+.gutter_grid_2  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 2) - @gutter); }
+.gutter_grid_3  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 3) - @gutter); }
+.gutter_grid_4  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 4) - @gutter); }
+.gutter_grid_5  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 5) - @gutter); }
+.gutter_grid_6  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 6) - @gutter); }
+.gutter_grid_7  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 7) - @gutter); }
+.gutter_grid_8  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 8) - @gutter); }
+.gutter_grid_9  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 9) - @gutter); }
+.gutter_grid_10 { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 10) - @gutter); }
+.gutter_grid_11 { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 11) - @gutter); }
+.gutter_grid_12 { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 12) - @gutter); }
+
+/* Global */
+
+  .container { text-align: center;}
+  a { text-decoration: none; }
+  h1,h2,h3,h4,h5,h6 { font-size: 2.4em; .fancy-font;}
+
+/* Header Specific */
+
+  .site-branding {
+    .primary-head;
+    .fancy-font;
+    margin: 0;
+  }
+  .site-branding h1 { font-size: 5em; position: relative;}
+  .site-branding h2 { font-size: 2.0em;}
+  .site-branding a {
+    .primary-head;
+    color: @highlight;
+  }
+  .site-branding a:hover {
+    color: @secondary-accent;
+  }
+
+/* Horizontal Navigation */
+
+.main-navigation {
+  .fancy-font;
+  background: @dark;
+}
+.main-navigation a {
+  padding: 10px;
+  color: @light;
+  font-size: 1.3em;
+}
+.main-navigation a:hover {
+  color: @secondary-accent;
 }
