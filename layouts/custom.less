@@ -1,0 +1,37 @@
+/* box width maintainability in IE-8+ */
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+/* Base Colors */
+@dark: #222;
+@light: #DDD;
+@primary: #184D68;
+@secondary: #D55121;
+@highlight: #CFE990;
+@primary-accent: #31809F;
+@secondary-accent: #FB9C6C;
+@hightlight-accent: #EAFBC5;
+
+/* Color Combo Mix-ins */
+
+.secondary-head {
+  background: @secondary;
+  color: @light;
+}
+
+.secondary-body {
+  background: @secondary-accent;
+  color: @dark;
+}
+
+body {
+  .secondary-head;
+}
+
+a {
+  .secondary-body;
+}
