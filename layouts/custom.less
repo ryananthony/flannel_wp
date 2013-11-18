@@ -61,37 +61,22 @@
 
 /* Dynamic-ish Grid */
 
-@columns:12;
-@gutter:5;
-@gutterPct:(@gutter / 100);
-@colWidth:((100/@columns) / 100);
+@columns: 12;
+@gutter: 3;
+
+@gutterPct: (@gutter / 100);
+@colWidth: ((100/@columns) / 100);
 @singleCol: (@colWidth - @gutter);
 //@fullWidth:(@singleCol + @gutter) * @columns);
 
-.grid_1  { .fl; margin: 0; width:  percentage(@colWidth) * 1; }
-.grid_2  { .fl; margin: 0; width: (percentage(@colWidth) * 2); }
-.grid_3  { .fl; margin: 0; width: (percentage(@colWidth) * 3); }
-.grid_4  { .fl; margin: 0; width: (percentage(@colWidth) * 4); }
-.grid_5  { .fl; margin: 0; width: (percentage(@colWidth) * 5); }
-.grid_6  { .fl; margin: 0; width: (percentage(@colWidth) * 6); }
-.grid_7  { .fl; margin: 0; width: (percentage(@colWidth) * 7); }
-.grid_8  { .fl; margin: 0; width: (percentage(@colWidth) * 8); }
-.grid_9  { .fl; margin: 0; width: (percentage(@colWidth) * 9); }
-.grid_10 { .fl; margin: 0; width: (percentage(@colWidth) * 10); }
-.grid_11 { .fl; margin: 0; width: (percentage(@colWidth) * 11); }
-.grid_12 { .fl; margin: 0; width: (percentage(@colWidth) * 12); }
-.gutter_grid_1  { .fl; margin: 0 percentage(@gutterPct / 2); width:  (percentage(@colWidth) - @gutter); }
-.gutter_grid_2  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 2) - @gutter); }
-.gutter_grid_3  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 3) - @gutter); }
-.gutter_grid_4  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 4) - @gutter); }
-.gutter_grid_5  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 5) - @gutter); }
-.gutter_grid_6  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 6) - @gutter); }
-.gutter_grid_7  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 7) - @gutter); }
-.gutter_grid_8  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 8) - @gutter); }
-.gutter_grid_9  { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 9) - @gutter); }
-.gutter_grid_10 { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 10) - @gutter); }
-.gutter_grid_11 { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 11) - @gutter); }
-.gutter_grid_12 { .fl; margin: 0 percentage(@gutterPct / 2); width: ((percentage(@colWidth) * 12) - @gutter); }
+.createGrid(@index) when (@index > 0) {
+  .grid_@{index} { .fl; width: percentage(@colWidth) * @index; }
+  .gutter_grid_@{index}  { .fl; margin: 0 percentage(@gutterPct / 2); width:  ((percentage(@colWidth) * @index) - @gutter); }
+  .createGrid(@index - 1)
+}
+
+.createGrid(0){} /* ends loop */
+.createGrid(@columns);
 
 /* Global */
 
