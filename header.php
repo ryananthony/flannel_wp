@@ -24,24 +24,42 @@
 <!--[if lt IE 7]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-<div id="page" class="hfeed site container">
-	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding group">
-			<div class="grid_4">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+<div id="page" class="hfeed site container_24">
+	<div class="alpha grid_24 omega wrap">
+		<?php do_action( 'before' ); ?>
+			<div class="alpha grid_4 omega f">
+				<div class="f-content">
+					<p>this is the sidebar of the "F" Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+					Suscipit, rem quibusdam sapiente obcaecati unde quod sed tempore nam perspiciatis veritatis 
+					laudantium quis eos non labore ullam aliquid ipsum cupiditate repellendus culpa consequatur 
+					incidunt. Ex, laboriosam sit ab nostrum eaque assumenda excepturi quisquam illum eum 
+					molestias. Expedita, rerum, voluptas dolore praesentium recusandae officia quidem fugit 
+					veniam hic assumenda corrupti eum qui minus minima eos deserunt quaerat aspernatur modi 
+					incidunt consectetur. A, aspernatur, vitae, sunt deserunt dolor aperiam animi perferendis 
+					modi libero ducimus dignissimos necessitatibus quasi quia tenetur accusamus excepturi 
+					molestias nam. Sed, sit nulla voluptatum nobis quasi rem magni odit dolorum.</p>
+				</div>
+				
 			</div>
-			<div class="grid_4">
-				<img src="wp-content/themes/flannel/images/fl-logo.png" alt="">
-			</div>
-		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'flannel' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'flannel' ); ?></a>
-
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-	<div id="content" class="site-content">
+			<!-- Main Content Column -->
+			
+			<div class="alpha grid_16 omega f">
+				<header id="masthead" class="site-header" role="banner">
+					<div class="alpha grid_16 omega site-branding">
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+					</div>
+					<nav id="site-navigation" class="alpha grid_16 omega main-navigation" role="navigation">
+						<h3 class="menu-toggle"><?php _e( 'Menu', 'flannel' ); ?></h3>
+						<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'flannel' ); ?></a>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+					</nav>
+				</header><!-- #masthead -->
+				<div class="alpha grid_16 omega focus">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, error, veniam perspiciatis rem sequi maiores vero animi dolorum optio repellat similique aspernatur mollitia tempora molestias totam sit quaerat nostrum laborum necessitatibus voluptas fuga nemo asperiores minima eligendi officiis corrupti id.</p>
+				</div>
+				<div class="alpha grid_16 omega fmid">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, error, veniam perspiciatis rem sequi maiores vero animi dolorum optio repellat similique aspernatur mollitia tempora molestias totam sit quaerat nostrum laborum necessitatibus voluptas fuga nemo asperiores minima eligendi officiis corrupti id.</p>
+				</div>
+				<div id="content" class="site-content">

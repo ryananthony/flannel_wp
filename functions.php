@@ -83,6 +83,7 @@ function flannel_scripts() {
 
 	/* Add Custom CSS */
   // wp_enqueue_style( '<themename>-content-sidebar-style', get_stylesheet_directory_uri() . '/layouts/content-sidebar.css' );
+  wp_enqueue_style( '960gs', get_stylesheet_directory_uri() . '/layouts/960_24_col.css' );
   wp_enqueue_style( 'flannel-custom-style', get_stylesheet_directory_uri() . '/layouts/custom.css' );
 
 

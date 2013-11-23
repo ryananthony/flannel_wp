@@ -16,7 +16,7 @@
 @highlight: #CFE990;
 @primary-accent: #31809F;
 @secondary-accent: #FB9C6C;
-@hightlight-accent: #EAFBC5;
+@highlight-accent: #EAFBC5;
 
 /* Color Combo Mix-ins */
 
@@ -28,6 +28,11 @@
 .secondary-head {
   background: @secondary;
   color: @light;
+}
+
+.nav-color {
+  background: @highlight;
+  color: @dark;
 }
 
 .secondary-body {
@@ -59,40 +64,24 @@
   float: left;
 }
 
-/* Dynamic-ish Grid */
 
-@columns: 12;
-@gutter: 3;
-
-@gutterPct: (@gutter / 100);
-@colWidth: ((100/@columns) / 100);
-@singleCol: (@colWidth - @gutter);
-//@fullWidth:(@singleCol + @gutter) * @columns);
-
-.createGrid(@index) when (@index > 0) {
-  .grid_@{index} { .fl; width: percentage(@colWidth) * @index; }
-  .gutter_grid_@{index}  { .fl; margin: 0 percentage(@gutterPct / 2); width:  ((percentage(@colWidth) * @index) - @gutter); }
-  .createGrid(@index - 1)
-}
-
-.createGrid(0){} /* ends loop */
-.createGrid(@columns);
 
 /* Global */
 
-  .container { text-align: center;}
-  a { text-decoration: none; }
-  h1,h2,h3,h4,h5,h6 { font-size: 2.4em; .fancy-font;}
+.container_24 { text-align: center;}
+a { text-decoration: none; }
+h1 { font-size: 5em; position: relative;}
+h2 { font-size: 2.0em;}
+h2,h3,h4,h5,h6 { font-size: 1.8em; .fancy-font;}
 
 /* Header Specific */
 
   .site-branding {
-    .primary-head;
     .fancy-font;
     margin: 0;
   }
-  .site-branding h1 { font-size: 5em; position: relative;}
-  .site-branding h2 { font-size: 2.0em;}
+
+
   .site-branding a {
     .primary-head;
     color: @highlight;
@@ -101,17 +90,55 @@
     color: @secondary-accent;
   }
 
+  .circle {
+    padding: 30px;
+    background: @primary-accent;
+    border-radius: 50%;
+  }
+
 /* Horizontal Navigation */
 
 .main-navigation {
   .fancy-font;
-  background: @dark;
+  .nav-color;
 }
 .main-navigation a {
   padding: 10px;
-  color: @light;
   font-size: 1.3em;
 }
 .main-navigation a:hover {
-  color: @secondary-accent;
+  color: @dark;
+}
+
+.f {
+   .primary-head;
+   overflow: hidden;
+}
+
+
+.l {
+  .secondary-head;
+}
+
+#content,
+.focus {
+  color: @dark;
+  background: @highlight-accent;
+}
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6 {
+  color: @primary;
+}
+
+.fmid p {
+  .primary-head;
+}
+
+.wrap {
+  display: table-cell;
 }
