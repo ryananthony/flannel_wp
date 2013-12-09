@@ -1,3 +1,25 @@
+/* Variables */
+
+/* Base Colors */
+@dark: #222;
+@light: #DDD;
+@first-strong: #184D68; /* blue */
+@first-accent: #31809F;
+@second-strong: #D55121; /* orange */
+@second-accent: #FB9C6C;
+@third-strong: #CFE990; /* yellow-green */
+@third-accent: #EAFBC5;
+
+.base-font {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fancy-font {
+  font-family: 'Loved by the King', cursive;
+  letter-spacing: 2px;
+  word-spacing: -10px;
+}
+
 /* box width maintainability in IE-8+ */
 
 *,
@@ -8,157 +30,87 @@
   box-sizing: border-box;
 }
 
-/* Base Colors */
-@dark: #222;
-@light: #DDD;
-@primary: #184D68;
-@secondary: #D55121;
-@highlight: #CFE990;
-@primary-accent: #31809F;
-@secondary-accent: #FB9C6C;
-@highlight-accent: #EAFBC5;
-
-/* Color Combo Mix-ins */
-
-
-.secondary-body {
-  background: @secondary-accent;
-  color: @dark;
+body {
+  .base-font;
+  background: @third-accent;
 }
 
-/* reusable classes */
-
-.fancy-font {
-  font-family: 'Pompiere', cursive;
-}
-
-/* clearfix from http://css-tricks.com/pseudo-element-roundup/ */
-
-.group:before,
-.group:after {
-    content:"";
-    display:table;
-}
-.group:after {
-    clear:both;
-}
-.group {
-    zoom:1; /* For IE 6/7 (trigger hasLayout) */
-}
-
-.fl {
-  float: left;
-}
-
-
-/* Global */
-
-.container_24 { text-align: center;}
-a { text-decoration: none; }
-h1 { font-size: 5em; position: relative;}
-h2 { font-size: 2.0em;}
-h2,h3,h4,h5,h6 { font-size: 1.8em; .fancy-font;}
-
-/* Header Specific */
-
-.site-branding {
-  .fancy-font;
-  height: 120px; /* 120px allows 30px for nav */
-}
-
-.site-branding a {
-  background: @primary;
-  color: @highlight;
-}
-.site-branding a:hover {
-  color: @secondary-accent;
-}
-.site-branding h2 {
-  margin-top: 56px;
-}
-
-.circle {
-  padding: 30px;
-  background: @primary-accent;
-  border-radius: 50%;
-}
-
-/* Horizontal Navigation */
-#site-navigation {
-  padding: 0;
+* { 
   margin: 0;
-  background: @primary;
-  overflow: hidden;
-  height: 100px;
+  padding: 0;
 }
 
-#site-navigation nav {
-  overflow: auto;
-  white-space: nowrap;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
 }
 
-#site-navigation ul {
-  width: 1200px;
-  display: inline-block;
-}
+h1 { .fancy-font; font-size: 60px; text-align: center;}
+h2 { padding-top: 14px; font-size: 20px; text-align: center; color: @first-accent;}
 
-#site-navigation .sub-menu {
-  background: red;
-}
+a { text-decoration: none;}
 
-#site-navigation .sub-menu li {
-  white-space: normal;
-  display: block;
-}
+.site-header { background: url(../images/header-bg.png); height: 210px; }
+.site-header a { color: @third-strong;}
+.site-header img { float: right; position: relative; left: 10px; }
 
-#site-navigation a {
+.main-navigation { padding-left: 20px;}
+.main-navigation a,
+.main-navigation a:visited {
+  position: relative;
   .fancy-font;
-  color: @highlight;
-  padding: 0 5px;
-  margin: 0 5px;
-  font-size: 1.3em;
+  padding: 5px 10px 5px;
+  font-size: 24px;
+  color: #fff;
 }
-#site-navigation a:hover {
-  color: @secondary-accent;
+.main-navigation a:hover,
+.main-navigation a:active, {
+  color: @third-strong;
+  border-bottom: 30px solid @third-strong;
 }
+.main-navigation a:hover:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  border-bottom: 6px solid @third-strong;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
 
-.f {
-   background: @primary;
-   color: @light;
-}
-
-
-.l {
-  background: @secondary;
-  color: @light; 
-}
-
-#content,
-.focus {
-  color: @dark;
-  background: @highlight-accent;
 }
 
-
-
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content h5,
-#content h6 {
-  color: @primary;
+#content {
+  background: @light;
 }
 
-.focus {
-  min-height: 300px;
+#dynamic-sidebar {
+  display: none;
+  background: url(../images/sidebar-bg.png) #333 repeat-x right top;
+  position: relative;
+  top: 0;
+  float: left;
+  margin-left: -150px;
 }
 
-.fmid {
-  height: 150px;
-  background: @primary;
+.dynamic-sidebar-content {
+  margin-left: 0;
 }
 
-.fmid p {
-  color: @light;
+@media all and (min-width: 1240px) {
+  #page {
+    position: relative;
+    left: -150px;
+  }
+
+  #dynamic-sidebar {
+    display: block;
+
+  }
+
 }
+

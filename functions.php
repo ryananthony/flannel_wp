@@ -83,6 +83,7 @@ function flannel_scripts() {
 
 	/* Add Custom CSS */
   // wp_enqueue_style( '<themename>-content-sidebar-style', get_stylesheet_directory_uri() . '/layouts/content-sidebar.css' );
+  wp_enqueue_style( 'normalize', get_stylesheet_directory_uri() . '/layouts/normalize.css' );
   wp_enqueue_style( 'main-grid', get_stylesheet_directory_uri() . '/layouts/880_16_5_5.css' );
   wp_enqueue_style( 'sidebar-grid', get_stylesheet_directory_uri() . '/layouts/320_8_5_5.css' );
   wp_enqueue_style( 'flannel-custom-style', get_stylesheet_directory_uri() . '/layouts/custom.css' );

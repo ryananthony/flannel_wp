@@ -9,23 +9,6 @@
 ?>
 
     	 </div><!-- #content -->
-      </div><!-- main column -->
-
-      <!-- End Main Content -->
-
-      <div class="alpha grid_4 omega l">
-        <p>this is the sidebar of the "L". Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-          Suscipit, rem quibusdam sapiente obcaecati unde quod sed tempore nam perspiciatis veritatis 
-          laudantium quis eos non labore ullam aliquid ipsum cupiditate repellendus culpa consequatur 
-          incidunt. Ex, laboriosam sit ab nostrum eaque assumenda excepturi quisquam illum eum 
-          molestias. Expedita, rerum, voluptas dolore praesentium recusandae officia quidem fugit 
-          veniam hic assumenda corrupti eum qui minus minima eos deserunt quaerat aspernatur modi 
-          incidunt consectetur. A, aspernatur, vitae, sunt deserunt dolor aperiam animi perferendis 
-          modi libero ducimus dignissimos necessitatibus quasi quia tenetur accusamus excepturi 
-          molestias nam. Sed, sit nulla voluptatum nobis quasi rem magni odit dolorum</p>
-      </div>
-
-
 
     	<footer id="colophon" class="alpha grid_24 omega l site-footer" role="contentinfo">
     		<div class="site-info">
@@ -38,6 +21,18 @@
     </div><!-- #page -->
 
     <?php wp_footer(); ?>
+  </div>
+  <div id="dynamic-sidebar" class="alpha omega sidebar_container_8">
+    <div class="dynamic-sidebar-content grid_8">
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+      <p>test</p>
+    </div>
   </div>
 </body>
 </html>
