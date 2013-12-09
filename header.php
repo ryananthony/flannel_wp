@@ -25,7 +25,7 @@
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
 <div id="page" class="hfeed site container_24">
-	<div class="alpha grid_24 omega wrap">
+	<div class="alpha grid_24 omega">
 		<?php do_action( 'before' ); ?>
 			<div class="alpha grid_4 omega f">
 				<div class="f-content">
@@ -47,8 +47,12 @@
 			<div class="alpha grid_16 omega f">
 				<header id="masthead" class="site-header" role="banner">
 					<div class="alpha grid_16 omega site-branding">
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+						<div class="alpha grid_6 site-title">	
+							<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						</div>	
+						<div class="grid_10 omega site-description">
+							<h2><?php bloginfo( 'description' ); ?></h2>
+						</div>
 					</div>
 					<nav id="site-navigation" class="alpha grid_16 omega main-navigation" role="navigation">
 						<h3 class="menu-toggle"><?php _e( 'Menu', 'flannel' ); ?></h3>

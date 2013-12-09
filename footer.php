@@ -8,8 +8,8 @@
  */
 ?>
 
-    	</div><!-- #content -->
-      </div>
+    	 </div><!-- #content -->
+      </div><!-- main column -->
 
       <!-- End Main Content -->
 

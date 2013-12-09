@@ -20,20 +20,6 @@
 
 /* Color Combo Mix-ins */
 
-.primary-head {
-  background: @primary;
-  color: @light;  
-}
-
-.secondary-head {
-  background: @secondary;
-  color: @light;
-}
-
-.nav-color {
-  background: @highlight;
-  color: @dark;
-}
 
 .secondary-body {
   background: @secondary-accent;
@@ -65,7 +51,6 @@
 }
 
 
-
 /* Global */
 
 .container_24 { text-align: center;}
@@ -76,48 +61,76 @@ h2,h3,h4,h5,h6 { font-size: 1.8em; .fancy-font;}
 
 /* Header Specific */
 
-  .site-branding {
-    .fancy-font;
-    margin: 0;
-  }
+.site-branding {
+  .fancy-font;
+  height: 120px; /* 120px allows 30px for nav */
+}
 
+.site-branding a {
+  background: @primary;
+  color: @highlight;
+}
+.site-branding a:hover {
+  color: @secondary-accent;
+}
+.site-branding h2 {
+  margin-top: 56px;
+}
 
-  .site-branding a {
-    .primary-head;
-    color: @highlight;
-  }
-  .site-branding a:hover {
-    color: @secondary-accent;
-  }
-
-  .circle {
-    padding: 30px;
-    background: @primary-accent;
-    border-radius: 50%;
-  }
+.circle {
+  padding: 30px;
+  background: @primary-accent;
+  border-radius: 50%;
+}
 
 /* Horizontal Navigation */
-
-.main-navigation {
-  .fancy-font;
-  .nav-color;
+#site-navigation {
+  padding: 0;
+  margin: 0;
+  background: @primary;
+  overflow: hidden;
+  height: 100px;
 }
-.main-navigation a {
-  padding: 10px;
+
+#site-navigation nav {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#site-navigation ul {
+  width: 1200px;
+  display: inline-block;
+}
+
+#site-navigation .sub-menu {
+  background: red;
+}
+
+#site-navigation .sub-menu li {
+  white-space: normal;
+  display: block;
+}
+
+#site-navigation a {
+  .fancy-font;
+  color: @highlight;
+  padding: 0 5px;
+  margin: 0 5px;
   font-size: 1.3em;
 }
-.main-navigation a:hover {
-  color: @dark;
+#site-navigation a:hover {
+  color: @secondary-accent;
 }
 
 .f {
-   .primary-head;
-   overflow: hidden;
+   background: @primary;
+   color: @light;
 }
 
 
 .l {
-  .secondary-head;
+  background: @secondary;
+  color: @light; 
 }
 
 #content,
@@ -125,6 +138,8 @@ h2,h3,h4,h5,h6 { font-size: 1.8em; .fancy-font;}
   color: @dark;
   background: @highlight-accent;
 }
+
+
 
 #content h1,
 #content h2,
@@ -135,10 +150,15 @@ h2,h3,h4,h5,h6 { font-size: 1.8em; .fancy-font;}
   color: @primary;
 }
 
-.fmid p {
-  .primary-head;
+.focus {
+  min-height: 300px;
 }
 
-.wrap {
-  display: table-cell;
+.fmid {
+  height: 150px;
+  background: @primary;
+}
+
+.fmid p {
+  color: @light;
 }
