@@ -15,10 +15,12 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
 <?php wp_head(); ?>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Loved+by+the+King' rel='stylesheet' type='text/css'>
-<script src="wp-content/themes/flannel/js/vendor/modernizr-2.6.2.min.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Passero+One' rel='stylesheet' type='text/css'>
+<script src="wp-content/themes/flannel_wp/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 7]>
@@ -38,9 +40,7 @@
 								<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 							</div>
 
-							<div class="site-description">
-								<h2><?php bloginfo( 'description' ); ?></h2>
-							</div>
+
 						
 							<nav id="site-navigation" class="main-navigation" role="navigation">
 								<h3 class="menu-toggle"><?php _e( 'Menu', 'flannel' ); ?></h3>
@@ -50,7 +50,7 @@
 
 						</div>
 							<div class="alpha main_grid_3 omega">
-								<img src="wp-content/themes/flannel/images/fl-box-large.png" alt="F.L. Site Branding Logo">
+								<img src="wp-content/themes/flannel_wp/images/fl-box-large.png" alt="F.L. Site Branding Logo">
 							</div>
 						
 					</div>

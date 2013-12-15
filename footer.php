@@ -22,16 +22,26 @@
 
     <?php wp_footer(); ?>
   </div>
-  <div id="dynamic-sidebar" class="alpha omega sidebar_container_8">
-    <div class="dynamic-sidebar-content grid_8">
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
+  <div id="dynamic-sidebar">
+    <nav class="sidebar-social">
+      <ul>
+           <li><img src="wp-content/themes/flannel_wp/images/rog.ie/facebook-a.png" alt=""></li><!--
+        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/twitter-a.png" alt=""></li><!--
+        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/soundcloud-a.png" alt=""></li><!--
+        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/youtube-a.png" alt=""></li><!--
+        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/feed-a.png" alt=""></li><!--
+    --></ul>
+    </nav>
+    <div class="dynamic-sidebar-content">
+
+      <?php get_sidebar(); ?>
+
+      <div class="soundcloud-widget">
+        <iframe width="100%" height="450" scrolling="no" frameborder="no" 
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/4308875&amp;color=31809F&amp;auto_play=false&amp;show_artwork=false">
+        </iframe>
+      </div>
+    
     </div>
   </div>
 </body>
