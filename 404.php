@@ -10,7 +10,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
+			<article class="error-404 not-found">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'flannel' ); ?></h1>
 				</header><!-- .page-header -->
@@ -48,7 +48,7 @@ get_header(); ?>
 					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
 				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+			</article><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

@@ -10,26 +10,34 @@
 
     	 </div><!-- #content -->
 
-    	<footer id="colophon" class="alpha grid_24 omega l site-footer" role="contentinfo">
-    		<div class="site-info">
-    			<?php do_action( 'flannel_credits' ); ?>
-    			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'flannel' ), 'WordPress' ); ?></a>
-    			<span class="sep"> | </span>
-    			<?php printf( __( 'Theme: %1$s by %2$s.', 'flannel' ), 'Flannel', '<a href="http://ryananthonyrichardson.com/" rel="designer">Ryan Anthony Richardson</a>' ); ?>
-    		</div><!-- .site-info -->
+    	<footer id="colophon" class="site-footer" role="contentinfo">
+          <div class="social-footer">
+            <div class="site-info">
+              <?php do_action( 'flannel_credits' ); ?>
+              <a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly...? &nbsp;Powered by %s', 'flannel' ), 'WordPress' ); ?></a>
+              <br>
+              <?php printf( __( '%1$s Theme by %2$s built on <a href="https://github.com/Automattic/_s/">underscores (_s)</a>.', 'flannel' ), 'Flannel', '<a href="http://www.ryananthonyrichardson.com/" rel="designer">Ryan Richardson</a>' ); ?>
+            </div><!-- .site-info -->
+          </div>
     	</footer><!-- #colophon -->
     </div><!-- #page -->
 
     <?php wp_footer(); ?>
   </div>
   <div id="dynamic-sidebar">
+
+    <aside id="search" class="widget widget_search">
+      <?php get_search_form(); ?>
+    </aside>
+
     <nav class="sidebar-social">
       <ul>
-           <li><img src="wp-content/themes/flannel_wp/images/rog.ie/facebook-a.png" alt=""></li><!--
-        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/twitter-a.png" alt=""></li><!--
-        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/soundcloud-a.png" alt=""></li><!--
-        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/youtube-a.png" alt=""></li><!--
-        --><li><img src="wp-content/themes/flannel_wp/images/rog.ie/feed-a.png" alt=""></li><!--
+           <li><a href="https://www.facebook.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/facebook-a.png" alt=""></a></li><!--
+        --><li><a href="https://twitter.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/twitter-a.png" alt=""></a></li><!--
+        --><li><a href="https://soundcloud.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/soundcloud-a.png" alt=""></a></li><!--
+        --><li><a href="http://www.youtube.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/youtube-a.png" alt=""></a></li><!--
+           TODO: This feed URL wasn't working in dev. Disabling until we figure it out.
+        --><li style="display:none;"><a href="<?php bloginfo('rss2_url'); ?>"><img src="wp-content/themes/flannel_wp/images/rog.ie/feed-a.png" alt=""></a></li><!--
     --></ul>
     </nav>
     <div class="dynamic-sidebar-content">
@@ -44,5 +52,6 @@
     
     </div>
   </div>
+  <script type="text/javascript" src=" <?php echo home_url(); ?>/wp-vote/client.js"> </script>
 </body>
 </html>

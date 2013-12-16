@@ -20,7 +20,7 @@
 <?php wp_head(); ?>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Passero+One' rel='stylesheet' type='text/css'>
-<script src="wp-content/themes/flannel_wp/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src=" <?php echo home_url(); ?>/wp-content/themes/flannel_wp/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <!--[if lt IE 7]>
@@ -50,7 +50,7 @@
 
 						</div>
 							<div class="alpha main_grid_3 omega">
-								<img src="wp-content/themes/flannel_wp/images/fl-box-large.png" alt="F.L. Site Branding Logo">
+								<img src=" <?php echo home_url(); ?>/wp-content/themes/flannel_wp/images/fl-box-large.png" alt="F.L. Site Branding Logo">
 							</div>
 						
 					</div>

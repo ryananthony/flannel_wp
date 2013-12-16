@@ -6,13 +6,14 @@ $(document).ready(function() {
 
   (function() {
     var $sidebar  = $('#dynamic-sidebar'),
+        $main     = $('#main'),
         $page     = $('#page .main_grid_16'),
         $second   = $('#secondary');
 
-    $sidebar.height($page.height());
+    //$sidebar.height($page.height());
 
     //TODO -> Need to resize main div when sidebar is too tall.
-    if (($sidebar.height() - 210) > $page.height()) {
+    if ($main.height() < $sidebar.height()) {
       $second.hide();
     }
     //this isn't working correctly ^

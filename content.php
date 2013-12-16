@@ -6,6 +6,17 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<div class="post-date">
+			<?php 
+				$post_date_string = get_the_date('M jS Y');
+				$post_year = substr($post_date_string, (strlen($post_date_string) - 4), 4);
+				$post_month = substr($post_date_string, 0, 3);
+				$post_day = substr($post_date_string, 4, 4);
+			?>
+			<p class="post-year"><?php echo $post_year; ?></p>
+			<p class="post-month"><?php echo $post_month; ?></p>
+			<p class="post-day"><?php echo $post_day; ?></p>
+		</div>
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
@@ -55,6 +66,7 @@
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
+		<br>
 		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'flannel' ), __( '1 Comment', 'flannel' ), __( '% Comments', 'flannel' ) ); ?></span>
 		<?php endif; ?>
 

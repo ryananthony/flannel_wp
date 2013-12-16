@@ -1,7 +1,9 @@
-/* Variables */
+/* *****************************
+      Variables & Mixins
+******************************* */
 
-/* Base Colors */
 @dark: #222;
+@grey: #888;
 @light: #EEE;
 @first-strong: #184D68; /* blue */
 @first-accent: #31809F;
@@ -14,42 +16,26 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.fancy-font {
-  font-family: 'Passero One', cursive;
-  letter-spacing: 2px;
+.fancy-font { font-family: 'Passero One', cursive; letter-spacing: 2px; }
 
+.shadow {
+  box-shadow: 0px 1px 6px 0px @dark;
 }
 
-/* box width maintainability in IE-8+ */
-
-*,
-:before,
-:after {
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
+*, :before, :after /* box width maintainability in IE-8+ */ {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-body {
-  .base-font;
-  background: url(../images/texture-bg.png) #000;
-  font-size: 18px;
-}
+body { .base-font; background: url(../images/texture-bg.png) #000; font-size: 18px; }
 
-* { 
-  margin: 0;
-  padding: 0;
-}
+* { margin: 0; padding: 0; }
 
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
+h6 { margin: 0; padding: 0; }
 
 h1,
 h2,
@@ -60,14 +46,18 @@ h4 {
 
 ul { margin-left: 30px;}
 li { position: relative; list-style: none;}
+ins { background: @second-strong; padding: 0 10px; }
 
-pre { background: @third-accent;}
-
-
-a, a:visited { text-decoration: none; color: @first-accent;}
-a:hover, a:active { transition: color 0.55s ease; color: @first-strong; }
+a, a:visited { text-decoration: none; color: @third-strong;}
+a:hover, a:active { transition: color 0.55s ease; color: @third-accent; }
 p { font-size: 18px;}
 blockquote { border-left: 4px solid @first-strong; padding-left: 6px; }
+
+#submit,
+button { background: @third-accent;}
+
+.form-horizontal input[type=text] { display: block; height: 50px; font-size: 20px; width: 100%;}
+.form-horizontal button { display: block; margin: 60px auto 0;}
 
 /* *****************************
     MAIN -> Header::Typography
@@ -80,7 +70,7 @@ blockquote { border-left: 4px solid @first-strong; padding-left: 6px; }
 .site-header img { float: right; position: relative; left: 10px; }
 
 /* *****************************
-    MAIN -> Header:Navigation
+    MAIN -> Header -> Nav
 ******************************* */
 
 .main-navigation { padding: 44px 0 0 20px;}
@@ -100,34 +90,129 @@ blockquote { border-left: 4px solid @first-strong; padding-left: 6px; }
   color: @third-strong;
   border-bottom: 30px solid @third-strong;
 }
-// .main-navigation a:hover:before {
-//   content: '';
-//   position: absolute;
-//   bottom: 0;
-//   left: 50%;
-//   border-bottom: 6px solid @third-strong;
-//   border-left: 6px solid transparent;
-//   border-right: 6px solid transparent;
 
-// }
+/* *****************************
+  MAIN -> Header -> Nav:Submenu
+******************************* */
 
-.site-description { color: @light;}
-
-.site-content {
-  background: @light;
-  padding: 0 30px;
+.main-navigation .sub-menu {
+  .shadow;
+  margin-top: 19px;
+  background: #000;
+  border-bottom: none;
+}
+.main-navigation .sub-menu a:hover {
+  border-bottom: none;
 }
 
-.site-content li:before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: -12px;
-  width: 8px;
-  border-left: 4px solid @first-strong;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-}
+/* *****************************
+      MAIN -> Content
+******************************* */
+
+  .site-content {
+    background: @light;
+    padding: 30px 30px 0;
+  }
+
+/* *****************************
+      MAIN -> Content -> Post
+******************************* */
+
+  /* TODO -> this is not showing up in IE 8. 
+     Conditional would not remove it either. */
+
+  article:before {
+    content: '';
+    position: relative;
+    top: -3px;
+    left: -31px;
+    width: 30px;
+    border-right: 30px solid transparent;
+    border-top: 30px solid @light;
+  }
+
+  article { 
+    margin: 45px 15px 0 0;
+    position: relative;
+    border-top: 30px solid @first-accent; 
+    padding: 0 30px 30px;
+    background: @first-strong;
+    color: @light;
+  }
+
+  article li:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -12px;
+    width: 8px;
+    border-left: 4px solid @third-strong;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+
+  .post a, 
+  .post a:visited { text-decoration: none; color: @third-strong;}
+  .post a:hover, 
+  .post a:active { transition: color 0.55s ease; color: @third-accent; }
+
+  .post-date {
+    position: absolute;
+    right: -15px;
+    top: -45px;
+    background: url(../images/fl-box-small.png) @third-accent;
+    width: 100px;
+    height: 140px;
+    .shadow;
+    .fancy-font;
+    line-height: 26px;
+  }
+
+  .post-year { font-size: 26px; text-align: center; margin: 0; color: @first-strong; padding-top: 18px;}
+  .post-month { font-size: 22px; text-align: center; margin: 0; padding-top: 24px; color: @first-strong; text-transform: uppercase; }
+  .post-day { font-size: 28px; text-align: center; margin: 0; padding: 0px; color: @first-accent; }
+
+  .sticky {
+    background: @dark;
+    color: @light;
+    border-top: 30px solid @second-accent; 
+  }
+
+  .sticky a, 
+  .sticky a:visited { color: @second-strong;}
+  .sticky a:hover, 
+  .sticky a:active { transition: color 0.55s ease; color: @second-accent; }
+
+  .sticky li:before {
+    border-left: 4px solid @second-strong;
+  }
+
+  .comment-form a, 
+  .paging-navigation a,
+  .post-navigation a, 
+  .comment-form a:visited,
+  .paging-navigation a:visited,
+  .post-navigation a:visited,  { color: @first-strong;}
+  .comment-form a:hover, 
+  .paging-navigation a:active,
+  .post-navigation a:hover, 
+  .comment-form a:hover, 
+  .paging-navigation a:active,
+  .post-navigation a:active,  { transition: color 0.55s ease; color: @first-accent; }
+
+/* *****************************
+    Custom Post Types & 404
+******************************* */
+
+.cover, 
+.show, 
+.error-404 { margin: 0 0 30px;}
+.cover h2 { font-size: 36px;}
+.cover p { margin-bottom: 0;}
+
+/* *****************************
+        Media Query SIDEBAR 
+******************************* */
 
 #dynamic-sidebar {
   display: none;
@@ -138,46 +223,67 @@ blockquote { border-left: 4px solid @first-strong; padding-left: 6px; }
   width: 320px;
 }
 
+.widget_search { display: block; margin-top: 70px; text-align: center; }
+.widget_search input { background: @grey; border: none; }
+.widget_search input[placeholder] { color: @light; }
+
 /* *****************************
-      SIDEBAR -> SOCIAL BAR
+    MQ SIDEBAR -> SOCIAL BAR
 ******************************* */
-.sidebar-social {
-  margin-top: 140px;
-  height: 40px;
-  background: #000;
-}
 
-.sidebar-social ul {
-  margin-left: 0;
-  padding: 4px 0;
-  text-align: center;
-}
+  .sidebar-social {
+    margin-top: 40px;
+    height: 40px;
+    background: #000;
+  }
 
-.sidebar-social li { display: inline-block; padding: 0 10px; }
-.sidebar-social img { cursor: pointer; }
+  .sidebar-social ul {
+    margin-left: 0;
+    padding: 4px 0;
+    text-align: center;
+  }
 
-.dynamic-sidebar-content {
-  margin-top: 30px;
-  padding: 0 30px 0;
+  .sidebar-social li { display: inline-block; padding: 0 10px; }
+  .sidebar-social img { cursor: pointer; }
+
+  .dynamic-sidebar-content {
+    margin-top: 30px;
+    padding: 0 30px 0;
+    color: @light;
+  }
+
+  .dynamic-sidebar-content a { color: @third-strong;}
+  .dynamic-sidebar-content a:hover { color: @third-accent;}
+  .dynamic-sidebar-content .soundcloud-widget { margin-top: 30px; }
+
+  .widget li { font-size: 16px; }
+  .widget li:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -12px;
+    width: 8px;
+    border-left: 4px solid @third-strong;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  .widget-title { font-size: 22px; }
+
+.site-footer {
   color: @light;
+  background: @first-strong; 
+  text-align: center;
+  height: 80px;
 }
 
-.dynamic-sidebar-content a { color: @third-strong;}
-.dynamic-sidebar-content a:hover { color: @third-accent;}
-.dynamic-sidebar-content .soundcloud-widget { margin-top: 30px; }
-
-.widget li { font-size: 16px; }
-.widget li:before {
-  content: '';
-  position: absolute;
-  top: 8px;
-  left: -12px;
-  width: 8px;
-  border-left: 4px solid @third-strong;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
+.site-footer img {
+  padding: 20px 24px 0px 24px;
 }
-.widget-title { font-size: 22px; }
+
+.site-footer .site-info {
+  font-size: 14px;
+  padding: 20px 0 10px 0;
+}
 
 
 @media all and (min-width: 1240px) {
