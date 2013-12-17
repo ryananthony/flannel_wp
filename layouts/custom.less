@@ -123,9 +123,9 @@ button { background: @third-accent;}
 
   article:before {
     content: '';
-    position: relative;
-    top: -3px;
-    left: -31px;
+    position: absolute;
+    top: -30px;
+    left: 0;
     width: 30px;
     border-right: 30px solid transparent;
     border-top: 30px solid @light;
@@ -199,6 +199,20 @@ button { background: @third-accent;}
   .comment-form a:hover, 
   .paging-navigation a:active,
   .post-navigation a:active,  { transition: color 0.55s ease; color: @first-accent; }
+
+  
+  .addthis_toolbox {
+    width: 242px;
+    margin: 30px auto 0;
+  }
+
+  .addthis_toolbox p {
+    color: @grey;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+
 
 /* *****************************
     Custom Post Types & 404

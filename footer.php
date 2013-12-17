@@ -32,23 +32,26 @@
 
     <nav class="sidebar-social">
       <ul>
-           <li><a href="https://www.facebook.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/facebook-a.png" alt=""></a></li><!--
-        --><li><a href="https://twitter.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/twitter-a.png" alt=""></a></li><!--
-        --><li><a href="https://soundcloud.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/soundcloud-a.png" alt=""></a></li><!--
-        --><li><a href="http://www.youtube.com/rockingflannel"><img src="wp-content/themes/flannel_wp/images/rog.ie/youtube-a.png" alt=""></a></li><!--
+           <li><a href="https://www.facebook.com/rockingflannel"><img src="<?php echo home_url(); ?>/wp-content/themes/flannel_wp/images/rog.ie/facebook-a.png" alt=""></a></li><!--
+        --><li><a href="https://twitter.com/rockingflannel"><img src="<?php echo home_url(); ?>/wp-content/themes/flannel_wp/images/rog.ie/twitter-a.png" alt=""></a></li><!--
+        --><li><a href="https://soundcloud.com/rockingflannel"><img src="<?php echo home_url(); ?>/wp-content/themes/flannel_wp/images/rog.ie/soundcloud-a.png" alt=""></a></li><!--
+        --><li><a href="http://www.youtube.com/rockingflannel"><img src="<?php echo home_url(); ?>/wp-content/themes/flannel_wp/images/rog.ie/youtube-a.png" alt=""></a></li><!--
            TODO: This feed URL wasn't working in dev. Disabling until we figure it out.
         --><li style="display:none;"><a href="<?php bloginfo('rss2_url'); ?>"><img src="wp-content/themes/flannel_wp/images/rog.ie/feed-a.png" alt=""></a></li><!--
     --></ul>
     </nav>
     <div class="dynamic-sidebar-content">
 
+    <!-- <div class="soundcloud-widget">-->
+    <!--   <iframe width="100%" height="450" scrolling="no" frameborder="no" -->
+    <!--   src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/4308875&amp;color=31809F&amp;auto_play=false&amp;show_artwork=false">-->
+    <!--   </iframe>-->
+    <!-- </div>-->
+
       <?php get_sidebar(); ?>
 
-      <div class="soundcloud-widget">
-        <iframe width="100%" height="450" scrolling="no" frameborder="no" 
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/4308875&amp;color=31809F&amp;auto_play=false&amp;show_artwork=false">
-        </iframe>
-      </div>
+      <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/rockingflannel"  data-widget-id="412469260397449217">Tweets by @rockingflannel</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     
     </div>
   </div>
