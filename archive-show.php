@@ -80,7 +80,7 @@ get_header(); ?>
               } 
             ?></strong></p>
             
-          <p><?php the_excerpt(); ?></p>
+          <?php the_content(); ?>
           
           
           <li style="margin-left: 12px;"><a href="<?php echo get_post_meta( get_the_ID(), 'fb_link', true); ?>">Click here to RSVP.</a></li>

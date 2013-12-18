@@ -38,7 +38,7 @@ get_header(); ?>
               }
             ?></div>
             
-          <?php if(has_excerpt()) {the_excerpt();} ?>
+          <?php the_content(); ?>
 
           <!-- AddThis Button BEGIN -->
           <div class="addthis_toolbox addthis_default_style addthis_32x32_style">

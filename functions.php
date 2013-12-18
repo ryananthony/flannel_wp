@@ -68,7 +68,7 @@ function flannel_setup() {
 	    'show_in_menu' => true,
 	    'show_in_nav_menus' => true,
 	    'menu_position' => 5,
-	    'supports' => array( 'title', 'excerpt', 'thumbnail', 'custom-fields' ),
+	    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
 	    'rewrite' => array( 'slug' => 'show','with_front' => false)
 	    )
 	  );
@@ -93,7 +93,7 @@ function flannel_setup() {
 	    'show_in_menu' => true,
 	    'show_in_nav_menus' => true,
 	    'menu_position' => 6,
-	    'supports' => array( 'title', 'excerpt', 'thumbnail', 'custom-fields' ),
+	    'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
 	    'rewrite' => array( 'slug' => 'cover','with_front' => false)
 	    )
 	  );
