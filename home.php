@@ -65,7 +65,7 @@ get_header(); ?>
 
   <script type="text/javascript">
 
-    $('.front-page-slider').unslider({
+    jQuery('.front-page-slider').unslider({
       speed: 1000,               //  The speed to animate each slide (in milliseconds)
       delay: 5000,              //  The delay between slide animations (in milliseconds)
       complete: function() {},  //  A function that gets called after every slide animation
