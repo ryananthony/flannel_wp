@@ -63,7 +63,6 @@ get_header(); ?>
     </main><!-- #main -->
   </div><!-- #primary -->
 
-  <script type="text/javascript" src=" <?php echo home_url(); ?>/wp-content/themes/flannel_wp/js/vendor/unslider.min.js"></script>
   <script type="text/javascript">
 
     $('.front-page-slider').unslider({
@@ -71,7 +70,7 @@ get_header(); ?>
       delay: 5000,              //  The delay between slide animations (in milliseconds)
       complete: function() {},  //  A function that gets called after every slide animation
       keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-      dots: true,               //  Display dot navigation
+      //dots: true,               //  Display dot navigation
       fluid: false              //  Support responsive design. May break non-responsive designs
     });
 

@@ -19,7 +19,8 @@
 <?php wp_head(); ?>
 <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Passero+One' rel='stylesheet' type='text/css'>
-<script src=" <?php echo home_url(); ?>/wp-content/themes/flannel_wp/js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="<?php echo home_url(); ?>/wp-content/themes/flannel_wp/js/vendor/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="<?php echo home_url(); ?>/wp-content/themes/flannel_wp/js/vendor/unslider.min.js"></script>
 </head>
 <body <?php body_class(); ?>>
 <!-- Google Tag Manager -->
