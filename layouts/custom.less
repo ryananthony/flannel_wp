@@ -12,11 +12,17 @@
 @third-strong: #CFE990; /* yellow-green */
 @third-accent: #EAFBC5;
 
+.transparent { // per http://css-tricks.com/css-transparency-settings-for-all-broswers/
+  zoom: 1;
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+}
+
 .base-font {
   font-family: 'Ubuntu', sans-serif;
 }
 
-.fancy-font { font-family: 'Passero One', cursive; letter-spacing: 2px; }
+.fancy-font { font-family: 'Averia Serif Libre', cursive; }
 
 .shadow {
   box-shadow: 0px 1px 6px 0px @dark;
@@ -63,7 +69,7 @@ button { background: @third-accent;}
     MAIN -> Header::Typography
 ******************************* */
 
-.site-header h1 { .fancy-font; font-size: 60px; text-align: center;}
+.site-header h1 { .fancy-font; font-size: 55px; text-align: center; text-shadow: 1px 1px 4px #222; }
 .site-header h2 { padding-top: 14px; font-size: 20px; text-align: center; color: @first-accent;}
 .site-header { background: url(../images/header-bg-trans.png); height: 210px; }
 .site-header a { color: @third-strong;}
@@ -73,7 +79,7 @@ button { background: @third-accent;}
     MAIN -> Header -> Nav
 ******************************* */
 
-.main-navigation { padding: 44px 0 0 20px;}
+.main-navigation { padding: 52px 0 0 20px;}
 .main-navigation a,
 .main-navigation a:visited {
   transition: border-bottom-color 0.75s ease,
@@ -84,6 +90,7 @@ button { background: @third-accent;}
   padding: 13px 10px 9px;
   font-size: 16px;
   color: #fff;
+  letter-spacing: 1px;
 }
 .main-navigation a:hover,
 .main-navigation a:active, {
@@ -105,14 +112,75 @@ button { background: @third-accent;}
   border-bottom: none;
 }
 
+/* ****************************************
+  MAIN -> Front Page Slider (unslider.js)
+****************************************** */
+
+  .front-page-slider { position: relative; overflow: auto; margin: 0 0 30px -30px;}
+  .front-page-slider li { list-style: none;  }
+  .front-page-slider ul li { float: left;  }
+
+  .front-page-slider img { 
+    position: relative;
+    margin: 0;
+    border-top: 30px solid @first-accent; 
+    padding: 0;
+    background: @first-strong;
+    color: @light;
+  }
+
+  .slide {
+    width: 810px;
+    height: 500px;
+    background: url(../images/slides/buffalo.jpg) no-repeat;
+  }
+
+  .slide.slide-first {
+    background: url(../images/slides/anim.gif) no-repeat;
+  }
+
+  .slide.slide-last {
+    background: url(../images/slides/shakedown.jpg) no-repeat;
+  }
+
+  .slide h1,
+  .slide h2 {
+    margin-left: 60px;
+    text-shadow: 2px 2px 4px #222;
+    color: @light;
+  }
+
+  .slide h1 { color: @first-accent; margin-top: 300px; }
+
+  .slide .slide-comment {
+    display: inline-block;
+    margin-left: 30px;
+    padding: 10px 30px;
+    background: @dark;
+    .transparent;
+  }
+
+  .slide .slide-comment p {
+    max-width: 500px;
+    color: @third-strong;
+    padding: 0;
+    margin: 0;
+  }
+
 /* *****************************
       MAIN -> Content
 ******************************* */
 
-  .site-content {
+  .site-main {
     background: @light;
-    padding: 30px 30px 0;
+    padding: 30px;
   }
+
+  .front-page {
+    background: @light;
+    padding: 30px 0;
+  }
+
 
 /* *****************************
       MAIN -> Content -> Post
@@ -151,10 +219,16 @@ button { background: @third-accent;}
     border-bottom: 4px solid transparent;
   }
 
+
+
   .post a, 
   .post a:visited { text-decoration: none; color: @third-strong;}
   .post a:hover, 
   .post a:active { transition: color 0.55s ease; color: @third-accent; }
+
+  .post h1,
+  .post h2,
+  .post h3 { text-shadow: 1px 1px 4px #333; }
 
   .post-date {
     position: absolute;
@@ -168,9 +242,9 @@ button { background: @third-accent;}
     line-height: 26px;
   }
 
-  .post-year { font-size: 26px; text-align: center; margin: 0; color: @first-strong; padding-top: 18px;}
-  .post-month { font-size: 22px; text-align: center; margin: 0; padding-top: 24px; color: @first-strong; text-transform: uppercase; }
-  .post-day { font-size: 28px; text-align: center; margin: 0; padding: 0px; color: @first-accent; }
+  .post-year { font-size: 18px; text-align: center; margin: 0; color: @first-strong; padding-top: 20px;}
+  .post-month { font-size: 20px; font-weight: bold; text-align: center; margin: 0; padding-top: 20px; color: @first-strong; text-transform: uppercase; }
+  .post-day { font-size: 22px; text-align: center; margin: 0; padding: 0px; color: @first-accent; }
 
   .sticky {
     background: @dark;
@@ -287,7 +361,7 @@ button { background: @third-accent;}
   color: @light;
   background: @first-strong; 
   text-align: center;
-  height: 80px;
+  height: 190px;
 }
 
 .site-footer img {

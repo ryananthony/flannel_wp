@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -16,6 +17,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h2 class="page-title">
+					
 					<?php
 						if ( is_category() ) :
 							single_cat_title();
